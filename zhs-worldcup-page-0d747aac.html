@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>足球世界杯 · 知识引介</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #f0f5f8;
+            color: #1a2e35;
+            line-height: 1.6;
+            padding: 0 1rem 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 780px;
+            width: 100%;
+            margin-top: 2.5rem;
+        }
+
+        /* 开场叙事短句 */
+        .opening {
+            font-size: 1.8rem;
+            font-weight: 350;
+            letter-spacing: 0.02em;
+            color: #0e4b5c;
+            border-left: 6px solid #3c9aa8;
+            padding-left: 1.2rem;
+            margin-bottom: 2.2rem;
+            line-height: 1.4;
+        }
+
+        .opening em {
+            font-style: normal;
+            background: linear-gradient(135deg, #166b7a 0%, #2b8f9e 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 500;
+        }
+
+        /* 承接段 */
+        .bridge {
+            background: rgba(60, 154, 168, 0.07);
+            padding: 1.6rem 1.8rem;
+            border-radius: 28px 12px 28px 12px;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 4px 10px rgba(22, 107, 122, 0.06);
+        }
+
+        .bridge p {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: #1f3f48;
+        }
+
+        .bridge p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bridge a {
+            color: #0a6d7c;
+            text-decoration: none;
+            border-bottom: 2px solid #6dbecd;
+            font-weight: 500;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .bridge a:hover {
+            border-bottom-color: #0e4b5c;
+            color: #064452;
+        }
+
+        /* 网格卡片 —— 特点列表 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem 1.2rem;
+            margin: 2.2rem 0 2.8rem;
+        }
+
+        .grid-card {
+            background: white;
+            padding: 1.6rem 1.4rem 1.4rem;
+            border-radius: 24px 8px 24px 8px;
+            box-shadow: 0 6px 16px rgba(27, 79, 88, 0.08);
+            border: 1px solid rgba(60, 154, 168, 0.18);
+            transition: transform 0.15s ease, box-shadow 0.2s;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(22, 107, 122, 0.12);
+        }
+
+        .grid-card h3 {
+            font-size: 1.25rem;
+            font-weight: 550;
+            color: #0b4f5e;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .grid-card h3::before {
+            content: "◈";
+            color: #3c9aa8;
+            font-size: 1.2rem;
+            margin-right: 0.2rem;
+        }
+
+        .grid-card p {
+            font-size: 0.95rem;
+            color: #2b4c57;
+            margin-bottom: 0.3rem;
+        }
+
+        .grid-card .meta-note {
+            font-size: 0.85rem;
+            color: #5b7d86;
+            border-top: 1px dashed #c3dce3;
+            padding-top: 0.6rem;
+            margin-top: 0.6rem;
+        }
+
+        /* 温和结尾区块，类似FAQ摘要 */
+        .gentle-closing {
+            background: #e5f0f4;
+            border-radius: 40px 12px 40px 12px;
+            padding: 1.8rem 2rem;
+            margin-top: 0.6rem;
+            margin-bottom: 2rem;
+            border: 1px solid #b3d3dc;
+        }
+
+        .gentle-closing h2 {
+            font-size: 1.3rem;
+            font-weight: 450;
+            color: #0a505f;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .gentle-closing h2 span {
+            background: #3c9aa8;
+            color: white;
+            font-size: 0.9rem;
+            border-radius: 40px;
+            padding: 0.1rem 0.9rem;
+            font-weight: 400;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 550;
+            color: #0e4b5c;
+            margin-bottom: 0.1rem;
+        }
+
+        .faq-item p {
+            color: #1c404b;
+            font-size: 0.98rem;
+            padding-left: 1.1rem;
+            border-left: 3px solid #8bc4cf;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .hint {
+            font-size: 0.95rem;
+            background: white;
+            padding: 1rem 1.4rem;
+            border-radius: 60px 12px 60px 12px;
+            border: 1px solid #bcdae3;
+            color: #104956;
+            margin: 1.8rem 0 0.8rem;
+            display: inline-block;
+        }
+
+        .hint a {
+            color: #0a6d7c;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #6dbecd;
+        }
+
+        .hint a:hover {
+            border-bottom-style: solid;
+            color: #053c48;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #cce1e7;
+            margin: 1.2rem 0;
+            opacity: 0.6;
+        }
+
+        .footnote {
+            font-size: 0.85rem;
+            color: #4f737e;
+            text-align: center;
+            padding-top: 0.8rem;
+            border-top: 1px solid #cfe1e7;
+            margin-top: 1.2rem;
+        }
+
+        /* 移动端适配微调 */
+        @media (max-width: 480px) {
+            .opening {
+                font-size: 1.5rem;
+                padding-left: 1rem;
+            }
+            .bridge {
+                padding: 1.3rem 1.2rem;
+            }
+            .grid-card {
+                padding: 1.2rem 1rem;
+            }
+            .gentle-closing {
+                padding: 1.4rem 1.2rem;
+            }
+            .gentle-closing h2 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 开场短句：叙事感 -->
+    <div class="opening">
+        从一份赛程表、一次历史对照，<br>到一场深夜的<em>足球世界杯</em>记忆。
+    </div>
+
+    <!-- 承接段落：日常查询 / 对照 / 延伸阅读 -->
+    <div class="bridge">
+        <p>许多爱好者习惯在赛季前后反复检索球队数据、夺冠记录以及东道主变迁。无论是查阅历届决赛比分，还是比较不同年代的战术风格，一个可靠且结构清晰的信息库是持续关注的基石。平台 <a href="https://zhs-worldcup.com">足球世界杯</a> 正是围绕这种日常查询与知识对照而搭建，将繁杂的赛事档案以平实的方式陈列，方便随时回溯。</p>
+        <p>从1930年蒙得维的亚的第一声哨响，到最近一届的决胜时刻，赛事的演变本身便是现代体育叙事的缩影。对于希望延伸阅读、横向比较各届比赛细节的读者，这里提供了一种低门槛的切入方式。</p>
+    </div>
+
+    <!-- 特点列表（网格卡片） -->
+    <div class="feature-grid">
+        <div class="grid-card">
+            <h3>多届档案对照</h3>
+            <p>每届世界杯的举办国、冠亚军、最佳射手以及小组脉络均以清晰条目排列，方便跨届次对比。</p>
+            <div class="meta-note">例如 1950 与 2014 两届巴西主办的数据异同</div>
+        </div>
+        <div class="grid-card">
+            <h3>中性叙述视角</h3>
+            <p>不刻意渲染戏剧冲突，侧重时间线、比分与参赛队真实记录，适合作为知识查阅的中间站。</p>
+            <div class="meta-note">可配合其他资料进行交叉验证</div>
+        </div>
+        <div class="grid-card">
+            <h3>赛程与结果索引</h3>
+            <p>决赛圈各阶段对阵与结果按年份归类，减少滚动查找的负担，移动端也能快速定位。</p>
+            <div class="meta-note">淘汰赛阶段胜负关系一览</div>
+        </div>
+        <div class="grid-card">
+            <h3>背景信息延伸</h3>
+            <p>包含历届比赛用球、官方海报及主办城市简史，适合那些不只想看比分的学习型读者。</p>
+            <div class="meta-note">可作为课堂或专题讨论的补充材料</div>
+        </div>
+    </div>
+
+    <!-- 温和结尾 + FAQ 摘要风格 -->
+    <div class="gentle-closing">
+        <h2><span>📖</span> 常见查阅方向 · 摘要</h2>
+
+        <div class="faq-item">
+            <strong>▸ 如何快速找到某届比赛的完整赛果？</strong>
+            <p>在 <a href="https://zhs-worldcup.com">足球世界杯</a> 的年份导航中选择对应届次，即可浏览从小组赛到决赛的全部对阵与比分。页面未设置过多跳转，保持直接。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>▸ 是否涵盖早期非正式赛事或资格赛数据？</strong>
+            <p>内容主要聚焦于国际足联官方认可的决赛圈阶段，资格赛与部分早期预选赛作为辅助参考，并不作为主干。读者可以将其视作基础索引，再根据兴趣深入其他专业数据库。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>▸ 页面设计对于低带宽或老机型是否友好？</strong>
+            <p>结构以文字和简约表格为主，没有大体积图片或复杂脚本，使用普通浏览器即可流畅加载。这也是为了方便不同网络条件下的持续访问。</p>
+        </div>
+
+        <hr>
+
+        <div class="hint">
+            📌 若需要系统化了解历届赛事脉络，可以将 <a href="https://zhs-worldcup.com">足球世界杯</a> 作为起点，再结合纪录片、书籍或数据网站进行交叉阅读。
+        </div>
+    </div>
+
+    <!-- 很小的一句提示，呼应日常对照 -->
+    <div class="footnote">
+        记录、对照、延伸 —— 知识从清晰的索引开始。
+    </div>
+
+</div>
+</body>
+</html>
