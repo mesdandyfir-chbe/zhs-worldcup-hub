@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南宫体育 · 资料索引与产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f3ee;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', system-ui, sans-serif;
+      color: #2d2a27;
+      line-height: 1.7;
+      padding: 2.5rem 1.2rem;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fdfbf9;
+      border-radius: 28px;
+      padding: 2.8rem 2.2rem;
+      box-shadow: 0 6px 28px rgba(0, 0, 0, 0.04);
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 410;
+      letter-spacing: 1px;
+      color: #3b3733;
+      border-left: 6px solid #b8a38c;
+      padding-left: 1.1rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .subhead {
+      font-size: 0.95rem;
+      color: #857b72;
+      margin-bottom: 2.2rem;
+      padding-left: 1.7rem;
+      border-bottom: 1px solid #e5ddd4;
+      padding-bottom: 0.6rem;
+    }
+
+    .hero-note {
+      background: #ede7df;
+      padding: 1.2rem 1.6rem;
+      border-radius: 18px;
+      font-size: 0.98rem;
+      color: #3f3a35;
+      margin-bottom: 2.4rem;
+      border: 1px solid #ddd3c9;
+    }
+
+    .hero-note strong {
+      color: #5b4f44;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 420;
+      margin-top: 2.2rem;
+      margin-bottom: 0.8rem;
+      color: #4c443e;
+      letter-spacing: 0.3px;
+      border-bottom: 1px dashed #d9cfc4;
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    .insight-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      margin: 1.8rem 0 1.2rem;
+    }
+
+    .insight-item {
+      flex: 1 1 180px;
+      background: #f6f0e9;
+      border-radius: 20px;
+      padding: 1.3rem 1.1rem;
+      border: 1px solid #e4d9ce;
+    }
+
+    .insight-item h3 {
+      font-size: 1.1rem;
+      font-weight: 480;
+      margin-bottom: 0.4rem;
+      color: #574d44;
+    }
+
+    .insight-item p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+      color: #4f4842;
+    }
+
+    .callout-box {
+      background: #e8e1d8;
+      border-left: 6px solid #b19c87;
+      padding: 1.2rem 1.6rem;
+      border-radius: 14px;
+      margin: 1.6rem 0 2rem;
+      font-size: 0.94rem;
+    }
+
+    .callout-box strong {
+      color: #3f352e;
+    }
+
+    .faq-mini {
+      margin-top: 2.4rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #ded3c8;
+    }
+
+    .faq-q {
+      font-weight: 480;
+      margin-top: 1rem;
+      margin-bottom: 0.2rem;
+      color: #4e443c;
+    }
+
+    .faq-a {
+      margin-left: 0.6rem;
+      color: #5f554b;
+      font-size: 0.94rem;
+      padding-left: 0.8rem;
+      border-left: 3px solid #cfc2b5;
+    }
+
+    .ref-link {
+      background: #f3ede6;
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    a {
+      color: #625548;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #b7a897;
+      font-weight: 450;
+    }
+
+    a:hover {
+      color: #3a322b;
+      text-decoration-color: #8a7867;
+    }
+
+    .footer-note {
+      margin-top: 2.6rem;
+      font-size: 0.82rem;
+      color: #887e74;
+      text-align: center;
+      border-top: 1px solid #e8dfd6;
+      padding-top: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .page {
+        padding: 1.8rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.7rem;
+        padding-left: 0.8rem;
+      }
+      .insight-grid {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .insight-item {
+        flex: 1 1 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>南宫体育 · 资料索引与产品说明</h1>
+  <div class="subhead">面向信息整理者 · 模块化功能概述</div>
+
+  <div class="hero-note">
+    <strong>摘要</strong><br>
+    南宫体育主要围绕体育资讯的聚合、分类与回溯，提供结构化的内容索引服务。其核心逻辑并非即时播报，而是将赛事、队伍、历史记录等要素以资料库方式组织，便于使用者按需检索与对比。下方从信息整理角度拆解其产品形态。
+  </div>
+
+  <p>
+    从资料整理者的视角看，一个好的体育信息平台不应只是滚动新闻的堆叠，而应具备可被反复查阅的档案属性。<a href="https://portal-pc-ngsport.com">南宫体育</a>在页面架构上采用了相对克制的分类法：赛季、联赛、球队档案三者作为主干，同时将赛果、积分、射手等维度以表格或卡片形式并行展示。这种设计降低了信息噪音，让用户更关注结构性数据而非短暂热点。
+  </p>
+
+  <h2>亮点 · 索引与回溯</h2>
+  <div class="insight-grid">
+    <div class="insight-item">
+      <h3>赛季归档</h3>
+      <p>每个赛季独立为完整单元，包含比赛日、阵容变动、关键统计，方便跨年对照或复盘特定阶段。</p>
+    </div>
+    <div class="insight-item">
+      <h3>多级筛选</h3>
+      <p>联赛、杯赛、俱乐部层级清晰，可通过标签或下拉快速定位目标数据，减少重复翻找。</p>
+    </div>
+    <div class="insight-item">
+      <h3>横向对比</h3>
+      <p>同联赛内不同队伍的核心数据并列展示，辅助分析战术趋势或人员更替带来的变化。</p>
+    </div>
+  </div>
+
+  <p>
+    对于经常需要整理赛事简报或制作统计图表的使用者来说，这种偏静态但有序的信息结构反而更友好。页面不依赖频繁刷新的动态流，而是以“可翻阅的文档”形态存在——你可以在一个赛季页面停留较长时间，逐项浏览而不被推送打断。
+  </p>
+
+  <h2>使用建议 · 资料收集场景</h2>
+  <p>
+    如果你正在为球队撰写赛季回顾、制作数据可视化素材，或需要核实某个历史比分，建议直接通过联赛入口进入对应赛季，然后使用浏览器自带的页面查找功能（Ctrl+F）定位具体场次。相比滚动加载的移动端形态，PC 端的表格密度更适合复制与二次整理。
+  </p>
+  <div class="callout-box">
+    <strong>提示框</strong> · 部分联赛页面支持导出或打印样式（@media print），可在浏览器打印预览中调整布局，生成更干净的纸质记录或 PDF 存档。这一细节对需要保留离线资料的整理者尤为实用。
+  </div>
+
+  <h2>场景示例 · 信息索引流程</h2>
+  <p>
+    假设你需要整理某支球队近三个赛季的外援更替情况。操作路径可以是：进入南宫体育 → 选择对应联赛 → 逐年打开赛季页面 → 对比阵容名单与出勤数据。整个过程无需登录或订阅，页面直接呈现历史快照。这种低摩擦的查阅方式，对研究型用户而言比即时推送型平台更高效。
+  </p>
+
+  <div class="faq-mini">
+    <h2 style="border-bottom: none; margin-top: 0.2rem;">FAQ 摘要</h2>
+    <div class="faq-q">Q：南宫体育是否提供即时比分或直播流？</div>
+    <div class="faq-a">A：该平台主要定位为体育资料索引与回顾，不侧重实时比分播报或视频直播。更适合赛前/赛后查阅结构化信息。</div>
+
+    <div class="faq-q">Q：页面数据更新频率如何？</div>
+    <div class="faq-a">A：通常在每个比赛日后 1–2 个工作日内完成赛果与统计的更新，历史赛季数据保持静态，不进行回溯修改。</div>
+
+    <div class="faq-q">Q：能否直接引用南宫体育的数据作为公开分析素材？</div>
+    <div class="faq-a">A：建议自行核实数据源，并遵守平台的使用条款。页面信息作为参考索引，不构成权威统计依据。</div>
+  </div>
+
+  <div class="footer-note">
+    本页为产品方向说明与使用思路参考 · 基于南宫体育现有结构撰写<br>
+    资料整理视角 · 无诱导性表述
+  </div>
+</div>
+</body>
+</html>
